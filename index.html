@@ -3,11 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font inter -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link href="/public/css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/public/assets/images/logo-white.webp" />
   </head>
-  <body class="h-screen flex items-center justify-center">
-    <h1 class="text-3xl basis1/ font-bold text-indigo-400">
-      setup tailwind success
-    </h1>
+  <body>
+    <!-- <div class="isolate bg-white"> -->
+    <div
+      class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
+    >
+      <svg
+        class="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
+        viewBox="0 0 1155 678"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)"
+          fill-opacity=".3"
+          d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
+        />
+        <defs>
+          <linearGradient
+            id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533"
+            x1="1155.49"
+            x2="-78.208"
+            y1=".177"
+            y2="474.645"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#9089FC"></stop>
+            <stop offset="1" stop-color="#FF80B5"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <nav
+      class="fixed top-0 left-0 z-50 w-full bg-transparent bg-gradient-to-br from-blue-400 to-blue-700 lg:absolute xl:bg-none"
+    >
+      <div class="xl:w-12/12 mx-auto w-full px-10 lg:px-10 2xl:w-8/12">
+        <div class="flex items-center py-6 lg:py-0">
+          <div class="w-3/12">
+            <a class="text-xl font-bold text-white" href="#"
+              ><div
+                class="flex items-center text-base uppercase tracking-wide text-white xl:text-blue-500"
+              >
+                <img
+                  src="./public/assets/images/logo-white.webp"
+                  width="40"
+                  height="40"
+                  class="mr-4 rounded shadow-xl"
+                  alt="Logo"
+                />Loka
+              </div></a
+            >
+          </div>
+          <div
+            id="main-navbar"
+            class="fixed top-0 -right-full h-full w-full flex-col bg-blue-700 px-10 py-16 transition-all md:flex md:w-64 lg:static lg:w-10/12 lg:flex-row lg:items-center lg:bg-transparent lg:px-0 lg:py-0"
+          >
+            <div class="flex w-full lg:w-8/12 lg:justify-center">
+              <button
+                class="navbar-close absolute top-0 right-0 mt-8 mr-10 cursor-pointer lg:hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 text-white text-opacity-75"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+              <ul
+                class="-my-2 flex flex-col lg:my-0 lg:-mx-6 lg:flex-row lg:items-center"
+              >
+                <li>
+                  <a
+                    class="inline-block py-2 font-bold text-slate-50 transition-all lg:mx-6 lg:py-10 lg:text-gray-900"
+                    href="#"
+                    >Progam</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="inline-block py-2 text-slate-50 text-opacity-75 transition-all hover:text-opacity-100 lg:mx-6 lg:py-10 lg:text-gray-900"
+                    href="#"
+                    >Mentor</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="inline-block py-2 text-slate-50 text-opacity-75 transition-all hover:text-opacity-100 lg:mx-6 lg:py-10 lg:text-gray-900"
+                    href="#"
+                    >Pricing</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="inline-block py-2 text-slate-50 text-opacity-75 transition-all hover:text-opacity-100 lg:mx-6 lg:py-10 lg:text-gray-900"
+                    href="#"
+                    >Business</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="mt-auto flex w-full flex-col text-center lg:mt-0 lg:w-4/12 lg:flex-row lg:items-center lg:justify-end"
+            >
+              <a
+                href="#"
+                class="mt-4 inline-flex justify-center rounded-lg border-2 border-transparent bg-blue-500 py-2 px-5 font-bold text-white transition-all hover:bg-blue-600 lg:ml-8 lg:mt-0 lg:bg-transparent lg:text-gray-900 lg:hover:bg-transparent"
+                >Log in <span aria-hidden="true">&rarr;</span></a
+              >
+            </div>
+          </div>
+          <button class="navbar-toggler ml-auto lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 fill-current text-white"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <script src="/public/assets/js/app.js"></script>
   </body>
 </html>

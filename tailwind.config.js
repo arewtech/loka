@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+// const plugin = require('tailwindcss/plugin');
+const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./src/**/*.{html,js}", "index.html"],
   theme: {
@@ -13,7 +15,10 @@ module.exports = {
           "2xl": "6rem",
         },
       },
+      fontFamily: {
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+      },
     },
   },
-  plugins: [],
+  plugins: [require("prettier-plugin-tailwindcss")],
 };
