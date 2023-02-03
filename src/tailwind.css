@@ -1,6 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root {
+  --tw-bg-opacity: 0.9;
+}
+html {
+  @apply scroll-smooth;
+}
+/* custom banner */
+.custom-banner {
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+  background-image: url("/public/assets/images/bg-body.svg");
+  background-repeat: repeat-y;
+  background-position: center;
+  /* background-size: cover; */
+}
 /* custom scrolbar */
 ::-webkit-scrollbar {
   width: 14px;
