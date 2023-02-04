@@ -9,7 +9,7 @@ html {
 }
 /* custom banner */
 .custom-banner {
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+  /* background-color: rgb(37 99 235 / var(--tw-bg-opacity)); */
   background-image: url("/public/assets/images/bg-body.svg");
   background-repeat: repeat-y;
   background-position: center;
