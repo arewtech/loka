@@ -26,3 +26,6 @@ html {
   background: linear-gradient(125deg, #3b82f6, #60a5fa);
   border-radius: 10px;
 }
+.social-media:hover > * {
+  color: #293462;
+}
