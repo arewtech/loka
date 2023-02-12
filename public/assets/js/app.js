@@ -18,6 +18,23 @@ navbarToggler.forEach((toggler) =>
 navbarClose.forEach((close) =>
   close.addEventListener("click", closeNavbar.bind(this, navbar))
 );
+// set slider
+const slider = new Swiper(".slider", {
+  centeredSlides: true,
+  slidesPerView: "auto",
+  spaceBetween: 30,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+    // reverseDirection: true,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+});
 
 // const activeClass =
 //   "bg-blue-500 hover:bg-blue-500 shadow-xl rounded-xl text-white".split(" ");
