@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- font inter -->
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -45,6 +49,8 @@
     </div>
     <!-- navigation -->
     <nav
+      x-data="{ open: false }"
+      @click.away="open = false"
       class="fixed top-0 left-0 z-50 w-full bg-transparent bg-gradient-to-br from-blue-400 to-blue-700 lg:absolute xl:bg-none"
     >
       <div class="xl:w-12/12 mx-auto w-full px-10 lg:px-12 2xl:w-8/12">
@@ -65,11 +71,13 @@
             >
           </div>
           <div
+            :class="{ 'right-0': open, '-right-full': !open }"
             id="main-navbar"
-            class="fixed top-0 -right-full h-full w-full flex-col bg-blue-700 px-10 py-16 transition-all md:flex md:w-64 lg:static lg:w-10/12 lg:flex-row lg:items-center lg:bg-transparent lg:px-0 lg:py-0"
+            class="fixed top-0 h-full w-full flex-col bg-blue-700 px-10 py-16 transition-all md:flex md:w-64 lg:static lg:w-10/12 lg:flex-row lg:items-center lg:bg-transparent lg:px-0 lg:py-0"
           >
             <div class="flex w-full lg:w-8/12 lg:justify-center">
               <button
+                @click="open = false"
                 class="navbar-close absolute top-0 right-0 mt-8 mr-10 cursor-pointer lg:hidden"
               >
                 <svg
@@ -105,8 +113,9 @@
                 </li>
                 <li>
                   <a
+                    @click="open = false"
                     class="inline-block py-2 text-slate-50 text-opacity-75 transition-all hover:text-opacity-100 lg:mx-6 lg:py-10 lg:text-gray-900"
-                    href="#"
+                    href="#pricing"
                     >Pricing</a
                   >
                 </li>
@@ -130,7 +139,10 @@
               >
             </div>
           </div>
-          <button class="navbar-toggler ml-auto lg:hidden">
+          <button
+            @click="open = !open"
+            class="navbar-toggler ml-auto lg:hidden"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="w-6 fill-current text-white"
@@ -164,7 +176,7 @@
           <h1
             class="text-5xl font-light leading-tight text-blue-900 md:text-[3.5rem] lg:text-[3.4rem]"
           >
-            Asal Skill 👨🏻‍💻
+            Ayo, Asah Skill 👨🏻‍💻
             <span class="font-semibold text-blue-500">Programming</span>
             Kamu.
           </h1>
@@ -263,17 +275,16 @@
           <h2
             class="text-lg font-semibold leading-8 tracking-tight text-blue-500"
           >
-            Deploy faster
+            Mengapa harus belajar di Loka.com?
           </h2>
           <p
             class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
           >
-            Everything you need to deploy your app
+            Belajar bersama mentor yang berpengalaman
           </p>
           <p class="mt-6 text-lg leading-8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-            Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
-            In mi viverra elit nunc.
+            Kami memiliki mentor yang berpengalaman dan sudah banyak membantu
+            orang lain untuk menjadi programmer profesional.
           </p>
         </div>
         <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -302,11 +313,11 @@
                     />
                   </svg>
                 </div>
-                Push to deploy
+                Diversity
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                Morbi viverra dui mi arcu sed. Tellus semper adipiscing
-                suspendisse semper morbi. Odio urna massa nunc massa.
+                Belajar dimana saja dan kapan saja, karena kami menyediakan
+                video tutorial yang bisa diakses kapan saja.
               </dd>
             </div>
 
@@ -332,11 +343,11 @@
                     />
                   </svg>
                 </div>
-                SSL certificates
+                A.I Guideline
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                Sit quis amet rutrum tellus ullamcorper ultricies libero dolor
-                eget. Sem sodales gravida quam turpis enim lacus amet.
+                Kami memiliki A.I yang akan membantu kamu untuk memilih mentor
+                yang sesuai dengan kebutuhan kamu.
               </dd>
             </div>
 
@@ -362,11 +373,11 @@
                     />
                   </svg>
                 </div>
-                Simple queues
+                1 on 1 Mentoring
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                Quisque est vel vulputate cursus. Risus proin diam nunc commodo.
-                Lobortis auctor congue commodo diam neque.
+                Kamu bisa bertanya langsung kepada mentor yang kamu pilih,
+                karena kami menyediakan 1 on 1 mentoring.
               </dd>
             </div>
 
@@ -392,11 +403,11 @@
                     />
                   </svg>
                 </div>
-                Advanced security
+                Future Job
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis
-                aliquet hac quis. Id hac maecenas ac donec pharetra eget.
+                Kamu bisa mendapatkan pekerjaan sesuai dengan keahlian yang kamu
+                pelajari selama mentoring di Loka.com
               </dd>
             </div>
           </dl>
@@ -500,6 +511,7 @@
     <!-- end benefit -->
     <!-- pricing -->
     <section
+      id="pricing"
       class="xl:w-12/12 relative mx-auto w-full px-10 lg:px-12 2xl:w-8/12"
     >
       <div

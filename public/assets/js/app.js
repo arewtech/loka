@@ -1,6 +1,6 @@
-const navbar = document.querySelector("#main-navbar");
-const navbarToggler = document.querySelectorAll(".navbar-toggler");
-const navbarClose = document.querySelectorAll(".navbar-close");
+// const navbar = document.querySelector("#main-navbar");
+// const navbarToggler = document.querySelectorAll(".navbar-toggler");
+// const navbarClose = document.querySelectorAll(".navbar-close");
 // const previewToggle = document.querySelectorAll(".preview-toggle");
 // const previewImg = document.querySelector("#preview-img");
 
