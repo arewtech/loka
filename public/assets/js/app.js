@@ -4,20 +4,20 @@
 // const previewToggle = document.querySelectorAll(".preview-toggle");
 // const previewImg = document.querySelector("#preview-img");
 
-function openNavbar(navbar) {
-  navbar.classList.replace("-right-full", "right-0");
-}
+// function openNavbar(navbar) {
+//   navbar.classList.replace("-right-full", "right-0");
+// }
 
-function closeNavbar(navbar) {
-  navbar.classList.replace("right-0", "-right-full");
-}
+// function closeNavbar(navbar) {
+//   navbar.classList.replace("right-0", "-right-full");
+// }
 
-navbarToggler.forEach((toggler) =>
-  toggler.addEventListener("click", openNavbar.bind(this, navbar))
-);
-navbarClose.forEach((close) =>
-  close.addEventListener("click", closeNavbar.bind(this, navbar))
-);
+// navbarToggler.forEach((toggler) =>
+//   toggler.addEventListener("click", openNavbar.bind(this, navbar))
+// );
+// navbarClose.forEach((close) =>
+//   close.addEventListener("click", closeNavbar.bind(this, navbar))
+// );
 // set slider
 const slider = new Swiper(".slider", {
   centeredSlides: true,
