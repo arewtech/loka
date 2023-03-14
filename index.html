@@ -91,15 +91,24 @@
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
+          <a href="#" class="text-sm font-semibold leading-6 text-blue-500"
+            >Program</a
+          >
+          <a href="#" class="text-sm font-medium leading-6 text-gray-900"
+            >Mentor</a
+          >
+          <a href="#" class="text-sm font-medium leading-6 text-gray-900"
+            >Pricing</a
+          >
           <div x-data="{ open: false }" class="relative">
             <button
               @click="open = !open"
               @click.away="open = false"
               type="button"
-              class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
+              class="flex items-center gap-x-1 text-sm font-medium leading-6 text-gray-900"
               aria-expanded="false"
             >
-              Product
+              Business
               <svg
                 :class="{ 'rotate-180': open }"
                 class="h-5 w-5 flex-none text-gray-400"
@@ -337,16 +346,6 @@
               </div>
             </div>
           </div>
-
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-            >Features</a
-          >
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-            >Marketplace</a
-          >
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-            >Company</a
-          >
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
@@ -368,7 +367,7 @@
           class="fixed inset-0 z-10"
         ></div> -->
         <div
-          class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+          class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 shadow sm:max-w-sm"
         >
           <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
@@ -404,6 +403,22 @@
           <div class="mt-6 flow-root">
             <div class="-my-6 divide-y divide-gray-500/10">
               <div class="space-y-2 py-6">
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-blue-500 hover:bg-gray-50"
+                  >Program</a
+                >
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >Mentor</a
+                >
+                <a
+                  @click="open = false"
+                  href="#pricing"
+                  class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >Pricing</a
+                >
                 <div x-data="{ open: false }" class="-mx-3">
                   <button
                     @click="open = !open"
@@ -412,7 +427,7 @@
                     aria-controls="disclosure-1"
                     aria-expanded="false"
                   >
-                    Product
+                    Business
                     <!--
                   Expand/collapse icon, toggle classes based on menu open state.
 
@@ -477,22 +492,6 @@
                     >
                   </div>
                 </div>
-                <a
-                  href="#"
-                  class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >Features</a
-                >
-                <a
-                  href="#"
-                  class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >Marketplace</a
-                >
-                <a
-                  @click="open = false"
-                  href="#pricing"
-                  class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >Company</a
-                >
               </div>
               <div class="py-6">
                 <a
@@ -511,7 +510,7 @@
     <!-- section hero content -->
     <div class="xl:w-12/12 mx-auto w-full px-10 lg:px-12 2xl:w-8/12">
       <div
-        class="-mx-8 flex flex-wrap items-center justify-center pt-36 pb-10 lg:pt-44"
+        class="-mx-8 flex flex-wrap items-center justify-center pt-20 pb-10 lg:pt-16"
       >
         <div class="w-full px-8 text-center lg:w-8/12 xl:w-6/12 xl:text-left">
           <div
@@ -529,8 +528,8 @@
           <p
             class="mx-auto mt-4 text-xl leading-relaxed text-gray-600 md:w-3/5 lg:w-10/12 lg:text-lg xl:mx-0"
           >
-            Gabung bersama kami untuk belajar programming dari dasar hingga
-            menjadi programmer profesional.
+            Gabung bersama kita - kita ini biar ngoding lu jago, jangan tutorial
+            ngoding aja terus, kapan jagonya cok!
           </p>
           <div
             class="mt-8 flex flex-wrap items-center justify-center xl:justify-start"
@@ -621,7 +620,7 @@
           <h2
             class="text-lg font-semibold leading-8 tracking-tight text-blue-500"
           >
-            Mengapa harus belajar di Loka.com?
+            Mau jago ga lu?
           </h2>
           <p
             class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
@@ -630,12 +629,12 @@
           </p>
           <p class="mt-6 text-lg leading-8 text-gray-600">
             Kami memiliki mentor yang berpengalaman dan sudah banyak membantu
-            orang lain untuk menjadi programmer profesional.
+            orang lain untuk menjadi programmer profesional, biar ga kaya lu.
           </p>
         </div>
-        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-[60rem]">
           <dl
-            class="grid max-w-xl grid-cols-1 gap-y-10 gap-x-8 lg:max-w-none lg:grid-cols-2 lg:gap-y-16"
+            class="grid max-w-xl grid-cols-1 gap-y-10 gap-x-8 lg:max-w-none lg:grid-cols-2 lg:gap-x-14 lg:gap-y-16"
           >
             <div class="relative pl-16">
               <dt class="text-base font-semibold leading-7 text-gray-900">
@@ -779,8 +778,10 @@
           <div class="px-16 md:px-0">
             <p class="text-base font-medium text-blue-500">BETTER CAREER</p>
             <h2 class="my-3 text-2xl font-medium">Prepare The Journey</h2>
-            <p class="text-gray-600">
-              Learn from anyone around the world and get a new skills
+            <p class="text-gray-600 lg:max-w-sm">
+              Belajar dari mana saja, guasah lebay nunggu mood balik dan
+              sebagainya, belajar belajar dan belajar awkwakaw canda sholat
+              nomer 1.
             </p>
             <p class="mt-5">
               <a
@@ -808,8 +809,8 @@
             <p class="text-base font-medium text-blue-500">STUDY HARDER</p>
             <h2 class="my-3 text-2xl font-medium">Finish The Project</h2>
             <p class="text-gray-600 lg:max-w-sm">
-              Each of you will be joining private group and also working
-              together with team members on project
+              Kalian masing-masing akan bergabung dengan grup pribadi dan juga
+              bekerja sama dengan anggota tim dalam proyek.
             </p>
             <p class="mt-5">
               <a
@@ -837,8 +838,8 @@
             <p class="text-base font-medium text-blue-500">END GAME</p>
             <h2 class="my-3 text-2xl font-medium">Big Demo Day</h2>
             <p class="text-gray-600 lg:max-w-sm">
-              Learn how to speaking in public to demonstrate your final project
-              and receive the important feedbacks
+              Pelajari cara berbicara di depan umum untuk mendemonstrasikan
+              proyek akhir Anda dan menerima umpan balik penting.
             </p>
             <p class="mt-5">
               <a
@@ -877,13 +878,15 @@
         <h1
           class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-slate-50 md:text-5xl lg:text-6xl"
         >
-          We invest in the world’s potential
+          Invest duit lu buat ini aja brader 🫶🏻
         </h1>
         <p
           class="text-lg font-normal text-slate-200 sm:px-16 lg:text-xl xl:px-48"
         >
-          Here at Flowbite we focus on markets where technology, innovation, and
-          capital can unlock long-term value and drive economic growth.
+          Di Loka.com kita udah menyediakan beberapa paket yang bisa kalian
+          pilih - pilih dlu eaaa, harga bersahabat dan juga banefit yang di
+          dapat lumayan untuk jangka panjang, jadi tunggu apa lagi ayo gabung
+          cok!
         </p>
       </div>
       <div
@@ -895,7 +898,7 @@
         >
           <div class="p-8 sm:p-8">
             <h5 class="mb-4 text-xl font-medium text-blue-500">
-              Standard plan
+              Basic Laravel Course
             </h5>
             <div class="flex items-baseline text-gray-900">
               <span class="text-3xl font-semibold">$</span>
@@ -903,8 +906,7 @@
               <span class="ml-1 text-xl font-normal text-gray-500">/month</span>
             </div>
             <p class="mt-4 text-sm text-gray-600 md:text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Molestias, numquam?
+              Belajar Laravel dari dasar sampai mahir, studi kasus Ecommerce.
             </p>
           </div>
           <!-- List -->
@@ -923,7 +925,7 @@
                 ></path>
               </svg>
               <span class="text-base font-normal leading-tight text-gray-500"
-                >2 team members</span
+                >Apa itu Laravel?</span
               >
             </li>
             <li class="flex space-x-3">
@@ -940,7 +942,7 @@
                 ></path>
               </svg>
               <span class="text-base font-normal leading-tight text-gray-500"
-                >20GB Cloud storage</span
+                >Basic Routing (Blade)</span
               >
             </li>
             <li class="flex space-x-3">
@@ -957,7 +959,7 @@
                 ></path>
               </svg>
               <span class="text-base font-normal leading-tight text-gray-500"
-                >Integration help</span
+                >Heyy Controller</span
               >
             </li>
             <li class="flex space-x-3 line-through decoration-gray-500">
@@ -974,7 +976,7 @@
                 ></path>
               </svg>
               <span class="text-base font-normal leading-tight text-gray-500"
-                >Sketch Files</span
+                >Database (Builder)</span
               >
             </li>
             <li class="flex space-x-3 line-through decoration-gray-500">
@@ -1042,16 +1044,16 @@
         >
           <div class="p-8 sm:p-8">
             <h5 class="mb-4 text-xl font-medium text-blue-500">
-              Standard plan
+              Laravel Starter Kit Pro
             </h5>
             <div class="flex items-baseline text-gray-900">
               <span class="text-3xl font-semibold">$</span>
-              <span class="text-5xl font-extrabold tracking-tight">49</span>
+              <span class="text-5xl font-extrabold tracking-tight">89</span>
               <span class="ml-1 text-xl font-normal text-gray-500">/month</span>
             </div>
             <p class="mt-4 text-sm text-gray-600 md:text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Molestias, numquam?
+              Belajar Laravel dengan Starter Kit, studi kasus membuat website
+              Company Profile.
             </p>
           </div>
           <!-- List -->
@@ -1070,7 +1072,7 @@
                 ></path>
               </svg>
               <span class="text-base font-normal leading-tight text-gray-500"
-                >2 team members</span
+                >Apa itu Fortify</span
               >
             </li>
             <li class="flex space-x-3">
@@ -1087,7 +1089,7 @@
                 ></path>
               </svg>
               <span class="text-base font-normal leading-tight text-gray-500"
-                >20GB Cloud storage</span
+                >Services Fortify</span
               >
             </li>
             <li class="flex space-x-3">
@@ -1104,41 +1106,41 @@
                 ></path>
               </svg>
               <span class="text-base font-normal leading-tight text-gray-500"
-                >Integration help</span
+                >Setup Middleware (Custom)</span
               >
             </li>
-            <li class="flex space-x-3 line-through decoration-gray-500">
+            <li class="flex space-x-3 decoration-gray-500">
               <!-- Icon -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
                 viewBox="0 0 24 24"
-                style="fill: #9ca3af"
+                width="25"
+                height="25"
+                style="fill: #3b82f6"
               >
                 <path
-                  d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"
+                  d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"
                 ></path>
               </svg>
               <span class="text-base font-normal leading-tight text-gray-500"
-                >Sketch Files</span
+                >CRUD Users</span
               >
             </li>
-            <li class="flex space-x-3 line-through decoration-gray-500">
+            <li class="flex space-x-3 decoration-gray-500">
               <!-- Icon -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
                 viewBox="0 0 24 24"
-                style="fill: #9ca3af"
+                width="25"
+                height="25"
+                style="fill: #3b82f6"
               >
                 <path
-                  d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"
+                  d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"
                 ></path>
               </svg>
               <span class="text-base font-normal leading-tight text-gray-500"
-                >API Access</span
+                >Update Profile</span
               >
             </li>
             <li class="flex space-x-3 line-through decoration-gray-500">
