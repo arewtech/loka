@@ -2,7 +2,7 @@
 // const plugin = require('tailwindcss/plugin');
 const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
-  content: ["./src/**/*.{html,js}", "index.html"],
+  content: ["./src/**/*.{html,js}", "index.html", "./pages/**/*.{html,js}"],
   theme: {
     extend: {
       container: {
@@ -20,5 +20,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("prettier-plugin-tailwindcss")],
+  plugins: [
+    require("prettier-plugin-tailwindcss"),
+    require("@tailwindcss/forms"),
+  ],
 };
