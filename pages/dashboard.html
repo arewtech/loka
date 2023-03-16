@@ -502,37 +502,214 @@
 
     <!-- section hero content -->
     <div
-      class="container mx-auto flex w-full items-center justify-center px-10 md:h-[70vh] lg:px-12"
+      x-data="{open : false}"
+      class="container mx-auto w-full max-w-7xl px-10"
     >
       <!-- title -->
-      <div class="text-center">
-        <img
-          class="m-auto max-w-xs md:max-w-sm"
-          src="../public/assets/images/success.svg"
-          alt=""
-        />
+      <div class="title">
         <p
           class="mt-3 text-sm font-semibold uppercase tracking-wide text-blue-600 md:mt-6"
         >
-          What a day!
+          Dashboard
         </p>
         <h1
           class="mb-4 mt-3 text-2xl font-extrabold leading-tight tracking-tight text-gray-900 md:text-2xl lg:leading-none"
         >
-          Berhasil
-          <mark class="rounded bg-blue-600 px-2 text-white">Checkout</mark>
+          My
+          <mark class="rounded bg-blue-600 px-2 text-white">Dashboard</mark>
           Brader 🤙🏻
         </h1>
-        <!-- create button -->
-        <div class="m-auto mt-4 max-w-sm">
-          Terima kasih telah checkout di Loka.com, silahkan cek email kamu untuk
-          mendapatkan informasi lebih lanjut, kembali ke
-          <a
-            href="./dashboard.html"
-            class="text-sm font-medium underline hover:no-underline"
-            >Dashboard 🤙🏻</a
-          >
+      </div>
+
+      <div class="relative overflow-x-auto shadow sm:rounded-lg">
+        <div
+          class="flex items-center justify-between gap-x-2 border border-slate-100 bg-transparent pb-4"
+        >
+          <!-- dropdown -->
+          <div class="relative inline-block text-left">
+            <div>
+              <button
+                @click="open = !open"
+                type="button"
+                class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                id="menu-button"
+                aria-expanded="true"
+                aria-haspopup="true"
+              >
+                Options
+                <svg
+                  class="-mr-1 h-5 w-5 text-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <!-- item dropdown -->
+            <div
+              x-show="open"
+              @click.away="open = false"
+              x-transition:enter="transition ease-out duration-100"
+              x-transition:enter-start="transform opacity-0 scale-95"
+              x-transition:enter-end="transform opacity-100 scale-100"
+              x-transition:leave="transition ease-in duration-75"
+              x-transition:leave-start="transform opacity-100 scale-100"
+              x-transition:leave-end="transform opacity-0 scale-95"
+              class="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="menu-button"
+              tabindex="-1"
+            >
+              <div class="py-1" role="none">
+                <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-0"
+                  >Account settings</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-1"
+                  >Support</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-2"
+                  >License</a
+                >
+                <form method="POST" action="#" role="none">
+                  <button
+                    type="submit"
+                    class="block w-full px-4 py-2 text-left text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="menu-item-3"
+                  >
+                    Sign out
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- end dropdown -->
+          <label for="table-search" class="sr-only">Search</label>
+          <div class="relative">
+            <div
+              class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+            >
+              <svg
+                class="h-5 w-5 text-gray-500"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="table-search-users"
+              class="block w-80 rounded-lg border border-gray-300 bg-gray-50 p-2 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+              placeholder="Search for users"
+            />
+          </div>
         </div>
+        <table class="w-full text-left text-sm text-gray-500">
+          <thead class="bg-gray-50 text-xs uppercase text-gray-700">
+            <tr>
+              <th scope="col" class="p-4">No</th>
+              <th scope="col" class="px-6 py-3">Name</th>
+              <th scope="col" class="px-6 py-3">Position</th>
+              <th scope="col" class="px-6 py-3">Status</th>
+              <th scope="col" class="px-6 py-3">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b bg-white hover:bg-gray-50">
+              <td class="w-4 p-4 text-center">1</td>
+              <th
+                scope="row"
+                class="flex items-center whitespace-nowrap px-6 py-4 text-gray-900"
+              >
+                <img
+                  class="h-10 w-10 rounded-full"
+                  src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
+                  alt="Jese image"
+                />
+                <div class="pl-3">
+                  <div class="text-base font-semibold">Neil Sims</div>
+                  <div class="font-normal text-gray-500">
+                    neil.sims@flowbite.com
+                  </div>
+                </div>
+              </th>
+              <td class="px-6 py-4">React Developer</td>
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <div class="mr-2 h-2.5 w-2.5 rounded-full bg-green-500"></div>
+                  Online
+                </div>
+              </td>
+              <td class="px-6 py-4">
+                <a href="#" class="font-medium text-blue-600 hover:underline"
+                  >Detail</a
+                >
+              </td>
+            </tr>
+            <tr class="border-b bg-white hover:bg-gray-50">
+              <td class="w-4 p-4 text-center">2</td>
+              <th
+                scope="row"
+                class="flex items-center whitespace-nowrap px-6 py-4 font-medium text-gray-900"
+              >
+                <img
+                  class="h-10 w-10 rounded-full"
+                  src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
+                  alt="Jese image"
+                />
+                <div class="pl-3">
+                  <div class="text-base font-semibold">Bonnie Green</div>
+                  <div class="font-normal text-gray-500">
+                    bonnie@flowbite.com
+                  </div>
+                </div>
+              </th>
+              <td class="px-6 py-4">Designer</td>
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <div class="mr-2 h-2.5 w-2.5 rounded-full bg-green-500"></div>
+                  Online
+                </div>
+              </td>
+              <td class="px-6 py-4">
+                <a href="#" class="font-medium text-blue-600 hover:underline"
+                  >Detail</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <!-- end hero section -->
